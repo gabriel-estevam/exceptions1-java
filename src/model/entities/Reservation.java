@@ -43,11 +43,23 @@ public class Reservation
 		/*Aqui primeiro converte o valor em milisegundos em dias, dai temos a diferença entre as duas datas*/
 	}
 	
-	public void updateDates(Date checkIn, Date checkOut)
+	public String updateDates(Date checkIn, Date checkOut)
 	{
 		//Função para atualizar as datas
+		Date now = new Date();
+		if(checkIn.before(now) || checkOut.before(now))
+		{
+			return "Error in reservation: Reservation dates for update must be future";
+		}
+		
+	    if (!checkOut.after(checkIn))
+		{
+	    	return "Error in reservation: check-out date must be after check-in date";
+		}
+	    
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
+		return null;
 	}
 	
 	@Override
