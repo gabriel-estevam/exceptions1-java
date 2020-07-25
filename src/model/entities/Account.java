@@ -18,7 +18,7 @@ public class Account
 	{
 		this.number = number;
 		this.holder = holder;
-		deposit(balance);
+		this.balance = balance;	
 		this.withdrawLimit = withdrawLimit;
 	}
 

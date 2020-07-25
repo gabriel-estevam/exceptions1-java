@@ -42,6 +42,7 @@ public class Program4
 		{
 			//esse catch esta chamando a excecão criada, isto é, personalizada
 			System.out.println("Withdraw error: "+ e.getMessage());
+			//e.printStackTrace();
 		}
 		
 		sc.close();
